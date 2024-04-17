@@ -10,4 +10,5 @@ TODO :
 
 Bonus :
 [ ] Show distance matrix
-[ ] Basic Styling lol
+[ ] Basic Styling 
+[ ] Custom insert and delete or costs rules
