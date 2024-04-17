@@ -5,7 +5,8 @@ Demonstration of the Levenshtein distance
 TODO :
 [X] Two input text boxes
 [X] Submit button
-[ ] Calculate min-edit distance
+[X] Calculate min-edit distance
+[ ] Output
 
 Bonus :
 [ ] Show distance matrix
