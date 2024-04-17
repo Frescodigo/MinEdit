@@ -63,7 +63,7 @@ function updateTable(matrix, source, target) {
             else if (r == 0 && c > 1) {
                 tableCell.innerText = target[c - 2];
             }
-            else if (r > 1 && c > 1) {
+            else if (r + c >= 2) {
                 tableCell.innerHTML = matrix[r - 1][c - 1];
             }
             tableRow.appendChild(tableCell);

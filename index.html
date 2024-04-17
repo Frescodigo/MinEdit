@@ -3,22 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Edit Distance</title>
 </head>
 <body>
     <h1>Edit Distance</h1>
-    <form>
-        <label for="source-input">Source string:</label>
-        <input type="text" name="Source" id="source-input">
-        <label for="target-input">Target string:</label>
-        <input type="text" name="Target" id="target-input">
-        <button type="button" id="calculate-button">Calculate Distance</button>
-        <label for="distance-output">Distance:</label>
-        <output style="display: inline-block;" name="result" for="source-input target-input" id="distance-output"></output>
-    </form>
-    <table id="distance-matrix">
-        <caption>Distance Matrix</caption>
-    </table>
+    <div class="container border">
+        <div class="gi1">
+            <h2>
+                Choose Strings
+            </h2>
+            <form>
+                <div class="row">
+                    <label class="col-20" for="source-input">Source:</label>
+                    <input class="col-80" type="text" name="Source" id="source-input">
+                </div>
+                <div class="row">
+                    <label for="target-input">Target:</label>
+                    <input type="text" name="Target" id="target-input"></div>
+                <div class="row">
+                    <div class="spaced">
+                        <button type="button" id="calculate-button">Calculate Distance</button>
+                        <div>
+                            <label for="distance-output">Distance:</label>
+                            <output style="display: inline-block;" name="result" for="source-input target-input" id="distance-output"></output>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="gi2">
+            <h2>Distance Matrix</h2>
+            <table id="distance-matrix" class="border">
+            </table>
+        </div>
+        <div class="grid-col-span-2">
+            <h2>About Edit Distance</h2>
+            <p>
+                The <a href="https://en.wikipedia.org/wiki/Edit_distance">edit distance</a>
+                between two strings is the mininum number of operations required to transform
+                one string into the other. This implementation calculates the
+                <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance</a>
+                which allows insertion, substitution, and deletion. Each operation has a cost
+                associated with it:
+                <ul>
+                    <li>Insertion: 1</li>
+                    <li>Substitution: 0 if the characters are the same, 2 otherwise</li>
+                    <li>Deletion: 1</li>
+                </ul>
+            </p></div>
+    </div>
     <script src="editdistance.js"></script>
 </body>
 </html>

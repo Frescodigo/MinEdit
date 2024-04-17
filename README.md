@@ -10,5 +10,6 @@ TODO :
 
 Bonus :
 - [X] Show distance matrix
-- [ ] Basic Styling 
+- [X] Basic styling 
+- [ ] Better styling
 - [ ] Custom insert and delete or costs rules
