@@ -1,12 +1,8 @@
 const sourceInput = document.getElementById('source-input');
 const targetInput = document.getElementById('target-input');
 const calculateButton = document.getElementById('calculate-button');
-
-
-// calculateButton.addEventListener("click", (event) => {
-//     const source = sourceInput.value;
-//     console.log(source)
-// })
+const distanceOutput = document.getElementById('distance-output');
+const matrixTable = document.getElementById('distance-matrix')
 
 function insertCost(insertedChar) {
     return 1;
@@ -24,24 +20,6 @@ function calculateDistance(source, target) {
 
     const distanceMatrix = new Array(sourceLen + 1).fill(0)
         .map(() => new Array(targetLen + 1).fill(0));
-
-    /*
-    abc -> abcd
-
-    [
-        [,,,,],
-        [,,,,],
-        [,,,,],
-        [,,,,],
-    ]
-
-    c   3   2   1   0   1
-    b   2   1   0   1   2
-    a   1   0   1   2   3
-        0   1   2   3   4
-            a   b   c   d
-
-    */
 
     // initialize the first columm
     for (let i = 1; i <= sourceLen; i++) {
@@ -65,16 +43,41 @@ function calculateDistance(source, target) {
         }
     }
 
-    console.log(distanceMatrix);
+    return [distanceMatrix, distanceMatrix[sourceLen][targetLen]];
+}
 
-    return 0;
+function updateTable(matrix, source, target) {
+    matrixTable.innerHTML = ''
+
+    const sourceLen = source.length;
+    const targetLen = target.length;
+
+    for (let r = 0; r <= sourceLen + 1; r++) {
+        const tableRow = document.createElement('tr')
+        for (let c = 0; c <= targetLen + 1; c++) {
+            const tableCell = document.createElement('td');
+
+            if (c == 0 && r > 1) {
+                tableCell.innerText = source[r - 2];
+            }
+            else if (r == 0 && c > 1) {
+                tableCell.innerText = target[c - 2];
+            }
+            else if (r > 1 && c > 1) {
+                tableCell.innerHTML = matrix[r - 1][c - 1];
+            }
+            tableRow.appendChild(tableCell);
+        }
+        matrixTable.appendChild(tableRow);
+    }
 }
 
 calculateButton.onclick = (event) => {
     const source = sourceInput.value;
     const target = targetInput.value;
 
-    const editDistance = calculateDistance(source, target);
+    const [distanceMatrix, editDistance] = calculateDistance(source, target);
+    distanceOutput.value = editDistance;
 
-    console.log(source, target)
+    updateTable(distanceMatrix, source, target);
 }
