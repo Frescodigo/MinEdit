@@ -8,8 +8,8 @@
 </head>
 <body>
     <h1>Edit Distance</h1>
-    <div class="container border">
-        <div class="gi1">
+    <main class="container border">
+        <div>
             <h2>
                 Choose Strings
             </h2>
@@ -32,7 +32,7 @@
                 </div>
             </form>
         </div>
-        <div class="gi2">
+        <div>
             <h2>Distance Matrix</h2>
             <table id="distance-matrix" class="border">
             </table>
@@ -41,18 +41,21 @@
             <h2>About Edit Distance</h2>
             <p>
                 The <a href="https://en.wikipedia.org/wiki/Edit_distance">edit distance</a>
-                between two strings is the mininum number of operations required to transform
-                one string into the other. This implementation calculates the
+                (Wikipedia) between two strings is the mininum number of changes required
+                to transform one string into another. This implementation calculates the
                 <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance</a>
-                which allows insertion, substitution, and deletion. Each operation has a cost
-                associated with it:
+                (Wikipedia) which allows insertion, substitution, and deletion.
+                Each operation has a cost associated with it:
                 <ul>
                     <li>Insertion: 1</li>
                     <li>Substitution: 0 if the characters are the same, 2 otherwise</li>
                     <li>Deletion: 1</li>
                 </ul>
             </p></div>
-    </div>
+    </main>
+    <footer>
+      <a href='https://github.com/Frescodigo/MinEdit'>View source on GitHub</a>
+    </footer>
     <script src="editdistance.js"></script>
 </body>
 </html>
