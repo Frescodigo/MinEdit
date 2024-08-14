@@ -8,18 +8,24 @@ body {
     margin: auto;
 }
 
-footer, h1, h2 {
+h1, h2 {
     text-align: center;
 }
 
 input[type=text] {
     width: 100%;
     padding: 0.25em;
+    font-size: 1em;
 }
 
 label {
     display: inline-block;
     margin-bottom: 0.25em;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 1.5em;
 }
 
 .container {
